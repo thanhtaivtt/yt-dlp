@@ -1881,6 +1881,13 @@ def create_parser():
         dest='hls_split_discontinuity', action='store_true', default=False,
         help='Split HLS playlists to different formats at discontinuities such as ad breaks',
     )
+
+    extractor.add_option(
+        '--phantomjs',
+        dest='phantomjs', metavar='PATH',
+        help='Location of the phantom.js binary; either the path to the binary or its containing directory')
+
+
     extractor.add_option(
         '--no-hls-split-discontinuity',
         dest='hls_split_discontinuity', action='store_false',
