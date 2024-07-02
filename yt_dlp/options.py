@@ -1884,7 +1884,7 @@ def create_parser():
 
     extractor.add_option(
         '--phantomjs',
-        dest='phantomjs', metavar='PATH',
+        dest='phantomjs', metavar='PATH', default="phantomjs",
         help='Location of the phantom.js binary; either the path to the binary or its containing directory')
 
 
