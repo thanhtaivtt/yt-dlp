@@ -1902,7 +1902,6 @@ def create_parser():
         dest='phantomjs', metavar='PATH', default='phantomjs',
         help='Location of the phantom.js binary; either the path to the binary or its containing directory')
 
-
     extractor.add_option(
         '--no-hls-split-discontinuity',
         dest='hls_split_discontinuity', action='store_false',
