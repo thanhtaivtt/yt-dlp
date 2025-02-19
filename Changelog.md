@@ -4,6 +4,15 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2025.02.19.140150
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/089f85dd148e79651c288d31bf6364db4663d6ed) by [pukkandan](https://github.com/pukkandan)
+- [add remove emoji in video title](https://github.com/yt-dlp/yt-dlp/commit/b5a02c5ac2f0cc924adb23f02361e61c0eac7021) by [pukkandan](https://github.com/pukkandan)
+- [add remove emoji in video title](https://github.com/yt-dlp/yt-dlp/commit/1d335b1a135bd235ed1649bc03ea043c7571bcf1) by [pukkandan](https://github.com/pukkandan)
+- [fix autopep8](https://github.com/yt-dlp/yt-dlp/commit/427d7fc540b7d446ed2fddbcd55d04710d15ce13) by [pukkandan](https://github.com/pukkandan)
+- [update logic remove characters](https://github.com/yt-dlp/yt-dlp/commit/8469b5c69cbba8a6648ba20295ef28da17947954) by [pukkandan](https://github.com/pukkandan)
+
 ### 2025.02.19
 
 #### Core changes
