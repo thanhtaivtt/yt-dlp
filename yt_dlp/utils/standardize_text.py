@@ -21,15 +21,15 @@ def remove_emoji(text):
     return emoji_pattern.sub(r'', text)
 
 
-def remove_dot(text):
+def remove_special_chars(text):
     if text is None:
         return text
 
-    return re.sub(r'\.', '', text)
+    return re.sub(r'[.,\'"#]', '', text)  # Removes ., ', ", and #
 
 
 def standardize_text(text):
-    return remove_dot(remove_emoji(text))
+    return remove_special_chars(remove_emoji(text))
 
 
 class StandardizeText:
