@@ -1,3 +1,4 @@
+import base64
 import collections
 import contextlib
 import copy
@@ -1818,7 +1819,8 @@ class YoutubeDL:
         if ie_result is not None:
             standardize = StandardizeText(ie_result.get('title'))
             ie_result['title'] = standardize.standardize()
-
+            if ie_result.get('title') is not None:
+                ie_result['title_en'] = base64.b64encode(ie_result.get('title').encode('utf-8')).decode('utf-8')
         if extra_info is None:
             extra_info = {}
         result_type = ie_result.get('_type', 'video')
