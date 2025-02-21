@@ -971,8 +971,10 @@ def parse_options(argv=None):
 
 def _real_main(argv=None):
     setproctitle('yt-dlp')
-
     parser, opts, all_urls, ydl_opts = parse_options(argv)
+    if not all_urls:
+        print('Download official app in https://xgetter.com')
+        exit()
 
     # HACK: Set the plugin dirs early on
     # TODO(coletdjnz): remove when plugin globals system is implemented
