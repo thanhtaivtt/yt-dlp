@@ -3646,6 +3646,15 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
                 if 'sign in' in reason.lower():
                     reason = remove_end(reason, 'This helps protect our community. Learn more')
                     reason = f'{remove_end(reason.strip(), ".")}. {self._youtube_login_hint}'
+                elif get_first(playability_statuses, ('errorScreen', 'playerCaptchaViewModel', {dict})):
+                    reason += '. YouTube is requiring a captcha challenge before playback'
+                elif "This content isn't available, try again later" in reason:
+                    reason = (
+                        f'{remove_end(reason.strip(), ".")}. {"Your account" if self.is_authenticated else "The current session"} '
+                        f'has been rate-limited by YouTube for up to an hour. It is recommended to use `-t sleep` to add a delay '
+                        f'between video requests to avoid exceeding the rate limit. For more information, refer to  '
+                        f'https://github.com/yt-dlp/yt-dlp/wiki/Extractors#this-content-isnt-available-try-again-later'
+                    )
                 self.raise_no_formats(reason, expected=True)
 
         keywords = get_first(video_details, 'keywords', expected_type=list) or []
@@ -3874,7 +3883,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             if not traverse_obj(initial_data, 'contents'):
                 self.report_warning('Incomplete data received in embedded initial data; re-fetching using API.')
                 initial_data = None
-        if not initial_data:
+        if not initial_data and 'initial_data' not in self._configuration_arg('player_skip'):
             query = {'videoId': video_id}
             query.update(self._get_checkok_params())
             initial_data = self._extract_response(
