@@ -1785,7 +1785,7 @@ class YoutubeDL:
     @_handle_extraction_exceptions
     def __extract_info(self, url, ie, download, extra_info, process):
         self._apply_header_cookies(url)
-
+        print(download)
         try:
             ie_result = ie.extract(url)
         except UserNotLive as e:
@@ -1834,9 +1834,9 @@ class YoutubeDL:
         # remove emoji for fix decode in Windows
         if ie_result is not None:
             standardize = StandardizeText(ie_result.get('title'))
-            ie_result['title'] = standardize.standardize()
-            if ie_result.get('title') is not None:
-                ie_result['title_en'] = base64.b64encode(ie_result.get('title').encode('utf-8')).decode('utf-8')
+            # ie_result['title'] = standardize.standardize()
+            # if ie_result.get('title') is not None:
+            ie_result['title_en'] = base64.b64encode(standardize.standardize().encode('utf-8')).decode('utf-8')
         if extra_info is None:
             extra_info = {}
         result_type = ie_result.get('_type', 'video')
