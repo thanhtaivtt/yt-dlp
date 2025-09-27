@@ -4,6 +4,12 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2025.09.27.093427
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/1fbed3435b11fa06010cfd846ba82bf0a34c6646) by [pukkandan](https://github.com/pukkandan)
+- [fix Tiktok](https://github.com/yt-dlp/yt-dlp/commit/41fbc7111c16449496888ed2b3d68b825355c6e0) by [pukkandan](https://github.com/pukkandan)
+
 ### 2025.09.26
 
 #### Extractor changes
