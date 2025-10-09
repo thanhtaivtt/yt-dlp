@@ -174,7 +174,6 @@ from .utils.networking import (
     clean_proxies,
     std_headers,
 )
-from .utils.standardize_text import StandardizeText
 from .version import CHANNEL, ORIGIN, RELEASE_GIT_HEAD, VARIANT, __version__
 
 if os.name == 'nt':
@@ -1822,11 +1821,13 @@ class YoutubeDL:
             })
 
     def process_ie_result(self, ie_result, download=True, extra_info=None):
-        # remove emoji for fix decode in Windows
-        if ie_result is not None:
-            standardize = StandardizeText(ie_result.get('title'))
-            ie_result['title'] = standardize.standardize()
+        """
+        Take the result of the ie(may be modified) and resolve all unresolved
+        references (URLs, playlist items).
 
+        It will also download the videos if 'download'.
+        Returns the resolved ie_result.
+        """
         if extra_info is None:
             extra_info = {}
         result_type = ie_result.get('_type', 'video')
