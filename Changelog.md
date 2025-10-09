@@ -4,6 +4,21 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2025.10.09.151223
+
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/1fbed3435b11fa06010cfd846ba82bf0a34c6646) by [pukkandan](https://github.com/pukkandan)
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/0fb58ec52a595953b5a8e52857fcdc9b74532165) by [pukkandan](https://github.com/pukkandan)
+- [Revert "add remove emoji in video title"](https://github.com/yt-dlp/yt-dlp/commit/83e3ddd9d9ff3881f9b558b13fd8cf1e4bcfeb07) by [pukkandan](https://github.com/pukkandan)
+- [Revert "add remove emoji in video title"](https://github.com/yt-dlp/yt-dlp/commit/773c1061f8533dca4c2154eb2bdbfb1074eea871) by [pukkandan](https://github.com/pukkandan)
+- [Revert "fix Tiktok"](https://github.com/yt-dlp/yt-dlp/commit/f56a96ee73b750072aff26715d3401cdc18614e8) by [pukkandan](https://github.com/pukkandan)
+- [Revert "update logic remove characters"](https://github.com/yt-dlp/yt-dlp/commit/e051b7051a32bdc5c544f625579469dacb956673) by [pukkandan](https://github.com/pukkandan)
+- [fix Tiktok](https://github.com/yt-dlp/yt-dlp/commit/41fbc7111c16449496888ed2b3d68b825355c6e0) by [pukkandan](https://github.com/pukkandan)
+
+#### Extractor changes
+- **tiktok**: [Support browser impersonation](https://github.com/yt-dlp/yt-dlp/commit/5513036104ed9710f624c537fb3644b07a0680db) ([#14473](https://github.com/yt-dlp/yt-dlp/issues/14473)) by [bashonly](https://github.com/bashonly), [thanhtaivtt](https://github.com/thanhtaivtt)
+- **youtube**: [Detect experiment binding GVS PO Token to video id](https://github.com/yt-dlp/yt-dlp/commit/bd5ed90419eea18adfb2f0d8efa9d22b2029119f) ([#14471](https://github.com/yt-dlp/yt-dlp/issues/14471)) by [coletdjnz](https://github.com/coletdjnz)
+
 ### 2025.09.26
 
 #### Extractor changes
